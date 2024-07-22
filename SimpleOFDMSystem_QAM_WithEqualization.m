@@ -44,12 +44,14 @@ rx_data_symbols = fft(rx_ofdm_symbol);
 
 % Zero Forcing Equalization 
 H = fft(h,num_subcarriers); % Channel frequency response
-rx_data_symbols_zf = rx_data_symbols ./ H;
+H_mag_squared = abs(H).^2;
+%rx_data_symbols_zf = rx_data_symbols ./ H;
+rx_data_symbols_zf = conj(H) .* rx_data_symbols ./ H_mag_squared;
 scatterplot(rx_data_symbols_zf);
 
 % MMSE equalization
-H_mag_squared = abs(H).^2;
-rx_data_symbols_mmse = (H_mag_squared ./ (H_mag_squared + noise_power)) .* (rx_data_symbols ./ H);
+% rx_data_symbols_mmse = (H_mag_squared ./ (H_mag_squared + noise_power)) .* (rx_data_symbols ./ H);
+rx_data_symbols_mmse = (conj(H) ./ (H_mag_squared + noise_power)) .* (rx_data_symbols);
 scatterplot(rx_data_symbols_mmse);
 
 
