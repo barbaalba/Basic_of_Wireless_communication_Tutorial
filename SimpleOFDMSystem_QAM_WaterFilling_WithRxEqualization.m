@@ -6,7 +6,7 @@ num_taps = 4; % Number of taps in the FIR filter (channel impulse response)
 snr_db = 50; % Signal-to-noise ratio in dB
 M = 16; % Modulation order for 16-QAM
 k = log2(M); % Number of bits per symbol
-waterconfig = 'bisect'; % solve waterfilling using bisection ('bisect') or closed form
+waterconfig = 'closed'; % solve waterfilling using bisection ('bisect') or closed form
 
 % Generate random QAM data
 % data = randi([0 1], 1,num_subcarriers*k); % Random 16-QAM symbols
