@@ -28,17 +28,4 @@ end
 mu_opt = mu_half;
 P_opt = max(1/mu_opt - 1./csi,0);
 
-% Perform 1D search since the objective function is nonlinear function of mu
-% search_resolution = 1e4; 
-% mu = linspace(1e-4,P_t,search_resolution);
-% 
-% p_k = max(1./mu - (1./csi)',0); % all the possible power allocation for grid of mu (num_parallel * search_resolution)
-% 
-% g = sum(log2(1 + p_k.* (repmat(csi',[1 search_resolution])))) - ...
-%     mu.*(sum(p_k) - P_t); % Dual function value for all possible mu
-% 
-% [~,ind] = find(g == min(g));
-% mu_opt = mu(ind); % The power level 
-% 
-% P_opt = max(1/mu_opt - 1./csi,0);
 end
