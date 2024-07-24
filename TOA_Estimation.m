@@ -1,11 +1,11 @@
+clc;clear;close all;
 % Parameters
 fs = 1e6; % Sampling frequency (Hz)
 t = 0:1/fs:1e-3; % Time vector for 1 ms
-fc = 2.4e9; % Carrier frequency (Hz)
 signal_length = length(t); % Length of the signal
 
-% Transmitted Signal (example: a simple sine wave)
-tx_signal = cos(2*pi*fc*t);
+% Transmitted Signal (sinc function)
+tx_signal = sinc(2*pi*100*(t-0.5e-3));
 
 % Simulate the received signal with delay
 delay = 50e-6; % Delay in seconds
