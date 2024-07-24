@@ -13,5 +13,8 @@
 # Waterfilling
   Function waterfilling.m compute assigned power using bisection while functionwaterfilling.m follows the approach explained in [1, section 3.4]
 
+# Time of Arrival estimation
+It simply cross-correlates the Rx signal with the Tx signal and finds the peak of the correlation function. Longer signal duration results in higher precision in estimating the time of arrival. This step is mandatory to synchronize the clocks in the communication system. 
+
 # References
 [1] Björnson, Emil, and Özlem Tuğfe Demir. "Introduction to multiple antenna communications and reconfigurable surfaces." (2024). 
