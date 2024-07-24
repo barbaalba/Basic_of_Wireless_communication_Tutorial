@@ -21,11 +21,12 @@ rx_signal_noisy = awgn(rx_signal, SNR, 'measured');
 % Cross-correlation to estimate the delay
 [corr, lags] = xcorr(rx_signal_noisy, tx_signal);
 
-% Find the peak of the cross-correlation
-[~, I] = max(abs(corr));
+% Find the peaks of the cross-correlation
+[pks, locs] = findpeaks(corr, 'MinPeakHeight', max(corr)*0.5);
 
-% Calculate the estimated delay
-estimated_delay_samples = lags(I);
+% Select the highest peak
+[~, max_idx] = max(pks);
+estimated_delay_samples = lags(locs(max_idx));
 estimated_delay = estimated_delay_samples / fs;
 
 % Plotting
@@ -43,12 +44,12 @@ xlabel('Time (s)');
 ylabel('Amplitude');
 
 subplot(3,1,3);
-plot(lags/fs, abs(corr));
+plot(lags/fs, corr);
 title('Cross-Correlation');
 xlabel('Lag (s)');
 ylabel('Correlation');
 hold on;
-plot(estimated_delay, max(abs(corr)), 'ro');
+plot(estimated_delay, corr(locs(max_idx)), 'ro');
 hold off;
 
 % Display the estimated delay
