@@ -11,7 +11,7 @@
   **NOTE:** Adding noise power inside the inversion operation suppresses the noise if the channel is in deep fade.
 
 # Waterfilling
-Function waterfilling.m compute assigned power using bisection while functionwaterfilling.m follows the approach explained in section 3.4 of reference [1].
+  Function waterfilling.m compute assigned power using bisection while functionwaterfilling.m follows the approach explained in [1, section 3.4]
 
 # References
 [1] Björnson, Emil, and Özlem Tuğfe Demir. "Introduction to multiple antenna communications and reconfigurable surfaces." (2024). 
