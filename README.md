@@ -7,4 +7,5 @@
    Maximize the SNR, but it does not consider the possible interference.
 - Minimum Mean Squared Error:
    It is balancing MF and ZF. In high SNR, it converges to ZF; in low interference, it converges to MF.
-  **NOTE** Adding noise power inside the inversion operation suppresses the noise if the channel is in deep fade. 
+  
+  **NOTE:** Adding noise power inside the inversion operation suppresses the noise if the channel is in deep fade. 
