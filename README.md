@@ -21,4 +21,5 @@ MUSIC and ESPRIT are two classical algorithms to estimate the angle of arrivals 
 
 # References
 [1] Björnson, Emil, and Özlem Tuğfe Demir. "Introduction to multiple antenna communications and reconfigurable surfaces." (2024). 
+
 [2] Ramezani, Parisa, Özlem Tuğfe Demir, and Emil Björnson. "Localization in massive MIMO networks: From near-field to far-field." arXiv preprint arXiv:2402.07644 (2024).
