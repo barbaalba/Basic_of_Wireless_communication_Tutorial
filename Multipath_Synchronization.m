@@ -12,7 +12,7 @@ f1 = 50000; % End frequency of the chirp
 tx_signal = chirp(t, f0, signal_duration, f1);
 
 % Simulate the received signal with delay
-multipath_gain = [1, 0.5, 0.3];
+multipath_gain = [1, 0.6, 0.4];
 multipath_delays = [50e-6, 80e-6, 120e-6]; % Delays in seconds
 delay_samples = round(multipath_delays * fs); % Delay in samples
 
