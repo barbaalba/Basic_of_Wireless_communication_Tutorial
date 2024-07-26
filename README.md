@@ -1,4 +1,4 @@
-# Basic_of_Wireless_communication_Tutorial
+# Basic of Wireless communication: Tutorial
 This repository provides simple examples in the wireless communication field.
 
 # Time of Arrival and Synchronization
