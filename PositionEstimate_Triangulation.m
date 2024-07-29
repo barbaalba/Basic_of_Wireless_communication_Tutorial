@@ -2,15 +2,15 @@ clear; clc; close all;
 fc = 28e9; % Carrier frequency
 N = 64; % Number of antennas
 d_H = 1/2; % Normalized inter-element spacing 
-snr = db2pow(10); % SNR at the recievr
+snr = db2pow(0); % SNR at the recievr
 pilot_length = 10;
 
 % 2D coordinates for the Access Points (AP)
 AP1 = [0, 0]; % Access Point 1 coordinates
-AP2 = [10, 0]; % Access Point 2 coordinates
+AP2 = [100, 0]; % Access Point 2 coordinates
 
 % Actual position of the user in the 2D space
-userPos = [4, 5];
+userPos = [45, 45];
 
 % Simulate the reception of pilot signals at each AP
 % Assuming pilot signal is a known constant for simplicity
@@ -123,3 +123,5 @@ ylabel('Y Coordinate');
 title('User Position Estimation using AoA from Two APs');
 grid on;
 hold off;
+
+disp(['localization error (m): ', num2str(norm(estUserPos - userPos))]);
