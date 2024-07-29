@@ -1,10 +1,10 @@
-clc; clear; close all;
+clear; clc; close all;
 % Parameters
 fs = 1e8; % Sampling frequency (Hz)
 signal_duration = 10e-3; % Duration of the signal in seconds (longer the signal is, the more accurate the estimation)
 t = 0:1/fs:signal_duration; % Time vector for the signal duration
 signal_length = length(t); % Length of the signal
-SNR = 5; % in dB
+SNR = 0; % in dB
 
 % Transmitted Signal (chirp)
 f0 = 1000; % Start frequency of the chirp
@@ -99,3 +99,5 @@ grid on;
 xlabel('X Position (m)');
 ylabel('Y Position (m)');
 title('Trilateration Positioning');
+
+disp(['Distance error (m): ' , num2str(norm(pos - userPos)) ]);
