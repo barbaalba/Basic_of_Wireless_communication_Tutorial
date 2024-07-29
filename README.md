@@ -1,5 +1,13 @@
 # Basic of Wireless communication: Tutorial
-This repository provides simple examples in the wireless communication field. 
+This repository provides simple examples in the wireless communication field. Very basic communication signal follows the pipeline below:
+```
+ -----------------      --------------------      -------------------      ---------------
+|                 |    |                    |    |                   |    |               |
+| Synchronization |----| Channel Estimation |----| Data Transmission |----| Data recovery |
+|                 |    |                    |    |                   |    |               |
+ -----------------      --------------------      -------------------      ---------------
+
+```
 
 # Time of Arrival and Synchronization
 It simply cross-correlates the Rx signal with the Tx signal and finds the peak of the correlation function. Longer signal duration results in higher precision in estimating the time of arrival. This step is mandatory to synchronize the clocks in the communication system. In multipath_synchornization.m, a chirp signal is used to detect the first arrived path accurately.
