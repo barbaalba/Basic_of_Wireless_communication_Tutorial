@@ -100,4 +100,4 @@ xlabel('X Position (m)');
 ylabel('Y Position (m)');
 title('Trilateration Positioning');
 
-disp(['Distance error (m): ' , num2str(norm(pos - userPos)) ]);
+disp(['localization error (m): ' , num2str(norm(pos - userPos)) ]);
