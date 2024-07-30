@@ -1,5 +1,13 @@
 # Basic of Wireless communication: Tutorial
-This repository provides simple examples in the wireless communication field.
+This repository provides simple examples in the wireless communication field. Very basic communication signal follows the pipeline below:
+```
+ -----------------      --------------------      -------------------      ---------------
+|                 |    |                    |    |                   |    |               |
+| Synchronization |----| Channel Estimation |----| Data Transmission |----| Data recovery |
+|                 |    |                    |    |                   |    |               |
+ -----------------      --------------------      -------------------      ---------------
+
+```
 
 # Time of Arrival and Synchronization
 It simply cross-correlates the Rx signal with the Tx signal and finds the peak of the correlation function. Longer signal duration results in higher precision in estimating the time of arrival. This step is mandatory to synchronize the clocks in the communication system. In multipath_synchornization.m, a chirp signal is used to detect the first arrived path accurately.
@@ -8,12 +16,18 @@ It simply cross-correlates the Rx signal with the Tx signal and finds the peak o
 - Multipath_Synchronization.m
 
 # Frquency selective channel
-The channel behaves as a finite impulse response filter with memory in this scenario. In OFDM system, the channel can be converted to N parallel (orthogonal) channels if frequency domain by adding cyclic prefixes and applying DFT/IDFT and process the signal in frequency domain. 
+The channel behaves as a finite impulse response filter with memory in this scenario. In OFDM system, the channel can be converted to N parallel (orthogonal) channels in the frequency domain by adding cyclic prefixes and applying DFT/IDFT. Then any processing can be done in frequency domain 
 - SimpleInputOutputFIRChannel.m
 - SimpleOFDMSystem_WidebandConvertToNarrowBand.m
 - SimpleOFDMSystem_QAM_WithEqualization.m
 - SimpleOFDMSystem_QAM_WaterFilling_WithRxEqualization.m
-
+```
+                  --------------------          ------      ----------------      ---------      -------      ----------------------      -----      --------------
+  QAM symbols    |                    |        |      |    |                |    |         |    |       |    |                      |    |     |    |              |  Demodulated signal
+---------------> |    Waterfilling    |--------| IFFT |----| Cyclic prefix  |----| Channel |----| noise |----| Remove cyclic prefix |----| FFT |----| Equalization |--------------------->
+                 |                    |        |      |    |                |    |         |    |       |    |                      |    |     |    |              |
+                  --------------------          ------      ----------------      ---------      -------      ----------------------      -----      --------------
+```
 <details>
   <summary> Equalization</summary>
   
@@ -41,8 +55,9 @@ MUSIC and ESPRIT are two classical algorithms to estimate the angle of arrivals 
 - AOA_Estimate_MUSIC_vs_ESPRIT.m
 
 # Positioning
-We can localize a source based on triangulation using two APs or trilateration using three APs in 2D plane. 
+We can localize a source based on triangulation using two APs or based on trilateration using three APs in the 2D plane. 
 - PositionEstimate_Triangulation.m
+- PositionEstimate_Trilateration.m
 
   
 # References
