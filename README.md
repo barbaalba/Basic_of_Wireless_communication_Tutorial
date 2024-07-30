@@ -55,7 +55,7 @@ MUSIC and ESPRIT are two classical algorithms to estimate the angle of arrivals 
 - AOA_Estimate_MUSIC_vs_ESPRIT.m
 
 # Positioning
-We can localize a source based on triangulation using two APs or based on trilateration using three APs in the 2D plane. 
+We can localize a source based on triangulation using two APs or based on trilateration using three APs in the 2D plane. More details can be found in `Trilateration_and_Triangulation.pdf`.
 - PositionEstimate_Triangulation.m
 - PositionEstimate_Trilateration.m
 
