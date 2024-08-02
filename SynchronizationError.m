@@ -23,7 +23,7 @@ offset_samples = round(sync_error * samples_per_symbol);
 rx_signal_error = [zeros(1, offset_samples), tx_signal(1:end-offset_samples)];
 
 % Add noise
-SNR = -10; % Signal-to-noise ratio in dB
+SNR = 0; % Signal-to-noise ratio in dB
 rx_signal_perfect_noisy = awgn(rx_signal_perfect, SNR, 'measured');
 rx_signal_error_noisy = awgn(rx_signal_error, SNR, 'measured');
 
@@ -68,5 +68,5 @@ ber_perfect_avg = sum(received_data_perfect_avg ~= data) / num_symbols;
 ber_error_avg = sum(received_data_error_avg ~= data) / num_symbols;
 
 % Display BER for averaging method
-fprintf('BER with Perfect Synchronization (Averaging): %.4f\n', ber_perfect_avg);
-fprintf('BER with Synchronization Error (Averaging): %.4f\n', ber_error_avg);
+fprintf('BER with Perfect Synchronization: %.4f\n', ber_perfect_avg);
+fprintf('BER with Synchronization Error: %.4f\n', ber_error_avg);
