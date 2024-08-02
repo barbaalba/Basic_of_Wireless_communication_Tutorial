@@ -15,6 +15,13 @@ It simply cross-correlates the Rx signal with the Tx signal and finds the peak o
 - `TOA_Estimation.m`
 - `Multipath_Synchronization.m`
 
+<details>
+ <summary> Synchronization Error </summary>
+  If the transmitter and receiver are not synchronized, the receiver can not correctly demodulate the signal. The following code demonstrates this phenomena:
+ 
+  - `SynchronizationError.m`
+</details>
+  
 # Frquency selective channel
 The channel behaves as a finite impulse response filter with memory in this scenario. In OFDM system, the channel can be converted to N parallel (orthogonal) channels in the frequency domain by adding cyclic prefixes and applying DFT/IDFT. Then any processing can be done in frequency domain 
 - `SimpleInputOutputFIRChannel.m`
