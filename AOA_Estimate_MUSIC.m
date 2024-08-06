@@ -24,7 +24,7 @@ ang_idx = randperm(length(angle_search));
 azimuth_angles = angle_search(ang_idx(1:k));
 A = ULA_Evaluate(N,azimuth_angles,d_H); % channel
 s = 1/sqrt(2) * (randn(k,L) + 1i * randn(k,L)); % data
-n = 1/sqrt(2) * (randn(N,L) + 1i * randn(N,L)); % data
+n = 1/sqrt(2) * (randn(N,L) + 1i * randn(N,L)); % noise
 
 R = zeros(N,N);
 for i = 1:L
