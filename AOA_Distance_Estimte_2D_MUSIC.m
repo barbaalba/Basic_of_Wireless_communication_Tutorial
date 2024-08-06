@@ -1,4 +1,4 @@
-%% NOT COMPLETE %%
+%% NOT COMPLETE - It supports only one user%%
 clear; clc; close all;
 % parameters
 fc = 28e9; % carrier frequency in Hz
