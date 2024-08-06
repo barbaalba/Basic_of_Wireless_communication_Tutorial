@@ -19,11 +19,11 @@ k = 1; % number of users
 
 % generate a user at random location in near-field of an array
 r_k = unifrnd(d_F,d_FA,1,k);
-varphi = unifrnd(-pi/3,pi/3,1,k);
+varphi = unifrnd(0,pi,1,k);
 disp(['User is located at distance ', num2str(r_k), ' from the array']);
 % Evaluate precise user location
-x_k = r_k*cos(varphi);
-y_k = r_k*sin(varphi);
+x_k = r_k.*cos(varphi);
+y_k = r_k.*sin(varphi);
 
 % approximate ULA array response according to (9.44) in  Ramezani, 
 % Parisa, Özlem Tuğfe Demir, and Emil Björnson. "Localization in massive 
@@ -46,7 +46,7 @@ R = R/L;
 U_n = U(:,1:(M-k)); % noise sub_space
 
 % Exhaustive search over azimuth and distance 
-angle_search = -pi/3:pi/120:pi/3;
+angle_search = 0:pi/180:pi;
 distance_search = d_F:9*d_F:d_FA;
 MUSIC_spectrum = zeros(length(angle_search),length(distance_search));
 for l = 1:length(distance_search)
