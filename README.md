@@ -43,7 +43,7 @@ The channel behaves as a finite impulse response filter with memory in this scen
     
   - Matched Filtering: Maximize the SNR, but it does not consider the possible interference.
 
-  - Minimum Mean Squared Error: It is balancing MF and ZF. In high SNR, it converges to ZF; in low interference, it converges to MF.
+  - Minimum Mean Squared Error: It is balancing MF and ZF. In high SNR, it converges to ZF; in low interference, it converges to MF. The derivation of MMSE equalizer is detailed in `Complex_derivative_and_MMSE.pdf`
     
       - **NOTE:** Adding noise power inside the inversion operation suppresses the noise if the channel is in deep fade.
 </details>
