@@ -11,10 +11,16 @@ This repository provides simple examples in the wireless communication field. Ve
 Each simulation file examines a specific component of the aforementioned pipeline.
 
 # Time of Arrival and Synchronization
-It simply cross-correlates the Rx signal with the Tx signal and finds the peak of the correlation function. Longer signal duration results in higher precision in estimating the time of arrival. This step is mandatory to synchronize the clocks in the communication system. In multipath_synchornization.m, a chirp signal is used to detect the first arrived path accurately.
+It simply cross-correlates the Rx signal with the Tx signal and finds the peak of the correlation function. Longer signal duration results in higher precision in estimating the time of arrival. This step is mandatory to synchronize the clocks in the communication system. In multipath_synchornization.m, a chirp signal is used to accurately detect the first arrived path.
 
 - `TOA_Estimation.m`
+  
+  ![crosscorr](Images/CorrSimple.jpg)
+  
 - `Multipath_Synchronization.m`
+  
+  ![chirpTx](Images/ChripMultipathTx.jpg)
+  ![chirpTx](Images/ChripMultipathRx.jpg)
 
 <details>
  <summary> Synchronization Error </summary>
