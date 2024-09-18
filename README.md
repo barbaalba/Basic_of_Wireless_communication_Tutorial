@@ -20,7 +20,7 @@ It simply cross-correlates the Rx signal with the Tx signal and finds the peak o
 - `Multipath_Synchronization.m`
   
   ![chirpTx](Images/ChripMultipathTx.jpg)
-  ![chirpTx](Images/ChripMultipathRx.jpg)
+  ![chirpRx](Images/ChripMultipathRx.jpg)
 
 <details>
  <summary> Synchronization Error </summary>
@@ -65,6 +65,7 @@ The channel behaves as a finite impulse response filter with memory in this scen
 # Angle of Arrival 
 MUSIC and ESPRIT are two classical algorithms to estimate the angle of arrivals [2]. MUSIC requires to know the number of users/peaks in advance. However, it can be estimated.
 - `AOA_Estimate_MUSIC.m`
+  ![MUSIC](Images/MUSICSpectrum.jpg)
 - `AOA_Estimate_MUSIC_UnknownUsers.m`
 - `AOA_Estimate_MUSIC_vs_ESPRIT.m`
 
