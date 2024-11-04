@@ -10,6 +10,17 @@ This repository provides simple examples in the wireless communication field. Ve
 ```
 Each simulation file examines a specific component of the aforementioned pipeline.
 
+# Carrier Frequency Offset
+- What is carrier frequency offset (CFO)?
+
+  When there is a mismatch between oscillator generating carrier wave at the transmitter and receiver, a phase shift will be accumulated through time. This accumulated phase shift starts to distruct the detection of the symbol. The following code demonstrates this effect.
+
+-`CarrierFrequencyOffset.m`
+
+<img src="https://github.com/barbaalba/Basic_of_Wireless_communication_Tutorial/blob/main/Images/CFO_error.jpg" alt="Alt Text" width="600" height="300">
+
+  Here, the red curve results in an error when decoding symbols. 
+  
 # Time of Arrival and Synchronization
 It simply cross-correlates the Rx signal with the Tx signal and finds the peak of the correlation function. Longer signal duration results in higher precision in estimating the time of arrival. This step is mandatory to synchronize the clocks in the communication system. In multipath_synchornization.m, a chirp signal is used to accurately detect the first arrived path.
 
@@ -79,3 +90,8 @@ We can localize a source based on triangulation using two APs or based on trilat
 [1] Björnson, Emil, and Özlem Tuğfe Demir. "Introduction to multiple antenna communications and reconfigurable surfaces." (2024). 
 
 [2] Ramezani, Parisa, Özlem Tuğfe Demir, and Emil Björnson. "Localization in massive MIMO networks: From near-field to far-field." arXiv preprint arXiv:2402.07644 (2024).
+
+# Acknowledgement
+I would like to thanks my friends and colleagues helped me to collected this codes and information for new students. 
+
+[Miles Turner](https://www.deib.polimi.it/ita/personale/dettagli/1690964)
