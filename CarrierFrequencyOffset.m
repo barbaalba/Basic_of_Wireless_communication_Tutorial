@@ -8,7 +8,7 @@ Fs = 20e9;                % Sampling frequency (20 GHz)
 Fc = 2e9;                 % Carrier frequency (2 GHz)
 deltaF = 500;              % Frequency offset at the receiver
 Rb = 1e6;                 % Bit rate (1 Mbps)
-N = 501;                  % Number of bits to transmit
+N = 2000;                  % Number of bits to transmit (0.6 ms)
 Tb = 1/Rb;                % Bit duration
 t = (0:Fs*N*Tb-1)/Fs;     % Time vector for all samples
 samples_per_bit = Fs / Rb; % Number of samples per bit
@@ -199,3 +199,7 @@ disp(['Bit Error Rate (BER) when there is frequency offset and ideal filter: ', 
 % changes the phase and mess the system
 figure;
 plot(t,cos(2*pi*deltaF*t));
+hold on;
+plot(t(Fs/(4*deltaF): 3*Fs/(4*deltaF)),cos(2*pi*deltaF*t(Fs/(4*deltaF):3*Fs/(4*deltaF))) ,'r');
+xlabel('Time','FontSize',20,'Interpreter','latex');
+ylabel('$cos(2\pi \Delta f t)$','FontSize',20,'Interpreter','latex');
