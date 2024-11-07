@@ -1,5 +1,5 @@
 # Basic of Wireless communication: Tutorial
-This repository provides simple examples in the wireless communication field. Very basic communication signal follows the pipeline below:
+This repository provides simple examples in the wireless communication field. A very basic communication signal follows the pipeline below:
 ```
  -----------------      --------------------      -------------------      ---------------
 |                 |    |                    |    |                   |    |               |
@@ -92,6 +92,6 @@ We can localize a source based on triangulation using two APs or based on trilat
 [2] Ramezani, Parisa, Özlem Tuğfe Demir, and Emil Björnson. "Localization in massive MIMO networks: From near-field to far-field." arXiv preprint arXiv:2402.07644 (2024).
 
 # Acknowledgement
-I would like to thanks my friends and colleagues helped me to collected this codes and information for new students. 
+I would like to thank my friends and colleagues helped me to collect these codes and information for new students. 
 
 [Miles Turner](https://www.deib.polimi.it/ita/personale/dettagli/1690964)
