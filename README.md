@@ -81,6 +81,7 @@ MUSIC and ESPRIT are two classical algorithms to estimate the angle of arrivals 
 - `AOA_Estimate_MUSIC_vs_ESPRIT.m`
 
 Another method is PDDA [3], which is more computationally efficient. 
+- `AOA_Estimation_1D_PDDA.m`
 
 ![PDDA](Images/PDDASpectrum.jpg)
 # Positioning
