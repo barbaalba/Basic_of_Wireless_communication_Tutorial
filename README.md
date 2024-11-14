@@ -80,7 +80,7 @@ MUSIC and ESPRIT are two classical algorithms to estimate the angle of arrivals 
 - `AOA_Estimate_MUSIC_UnknownUsers.m`
 - `AOA_Estimate_MUSIC_vs_ESPRIT.m`
 
-Another method is PDDA, which is more computationally efficient. 
+Another method is PDDA [3], which is more computationally efficient. 
 
 ![PDDA](Images/PDDASpectrum.jpg)
 # Positioning
@@ -93,6 +93,8 @@ We can localize a source based on triangulation using two APs or based on trilat
 [1] Björnson, Emil, and Özlem Tuğfe Demir. "Introduction to multiple antenna communications and reconfigurable surfaces." (2024). 
 
 [2] Ramezani, Parisa, Özlem Tuğfe Demir, and Emil Björnson. "Localization in massive MIMO networks: From near-field to far-field." arXiv preprint arXiv:2402.07644 (2024).
+
+[3] Al-Sadoon, Mohammed A G et al. “A New Low Complexity Angle of Arrival Algorithm for 1D and 2D Direction Estimation in MIMO Smart Antenna Systems.” Sensors (Basel, Switzerland) vol. 17,11 2631. 15 Nov. 2017, doi:10.3390/s17112631
 
 # Acknowledgement
 I would like to thank my friends and colleagues helped me to collect these codes and information for new students. 
