@@ -7,7 +7,7 @@ SNR = 10; % received SNR in dB
 L = 10; % pilot symbol length
 k = 2; % maximum number of users in the system
 
-% grid search (MUSIC)
+% grid search (PDDA)
 angle_search = -pi/2:pi/360:pi/2; % angle grid
 grid_response = ULA_Evaluate(N,angle_search,d_H); % grid response
 
