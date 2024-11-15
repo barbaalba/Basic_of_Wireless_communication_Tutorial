@@ -84,6 +84,7 @@ Another method is PDDA [3], which is more computationally efficient.
 - `AOA_Estimation_1D_PDDA.m`
 
 ![PDDA](Images/PDDASpectrum.jpg)
+![PDDA_UPA](Images/PDDA_spectrum_UPA.jpg)
 # Positioning
 We can localize a source based on triangulation using two APs or based on trilateration using three APs in the 2D plane. More details can be found in `Trilateration_and_Triangulation.pdf`.
 - `PositionEstimate_Triangulation.m`
