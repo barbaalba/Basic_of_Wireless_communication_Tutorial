@@ -5,18 +5,20 @@ N = 32; d_H = 1/2;
 
 SNR = -30:3:21; % received SNR in dB
 L = 8; % pilot symbol length
-k = 2; % maximum number of users in the system
+k = 1; % maximum number of users in the system
 
+Monte = 2e4;
 % grid search (PDDA)
 angle_search = -pi/2:pi/360:pi/2; % angle grid
 grid_response = ULA_Evaluate(N,angle_search,d_H); % grid response
 
 %% System model
 % channel parameters
+error = zeros(Monte,length(SNR));
 for snr_idx = 1:length(SNR)
-    for monte_idx = 1:1000
+    for monte_idx = 1:Monte
         ang_idx = randperm(length(angle_search));
-        azimuth_angles = angle_search(ang_idx(1:k));
+        azimuth_angles = sort(angle_search(ang_idx(1:k)));
         A = ULA_Evaluate(N,azimuth_angles,d_H); % channel
         s = 1/sqrt(2) * (randn(k,L) + 1i * randn(k,L)); % data
         n = 1/sqrt(2) * (randn(N,L) + 1i * randn(N,L)); % noise
@@ -39,20 +41,17 @@ for snr_idx = 1:length(SNR)
         PDDA_spectrum = max_val - PDDA_spectrum;
         PDDA_spectrum = 1./(PDDA_spectrum+eps);
         [pkvalue,idx] = findpeaks(PDDA_spectrum,'SortStr','descend','NPeaks',k);
+        est_angles = sort(angle_search(idx));
 
+        error(monte_idx,snr_idx) = mean(abs(rad2deg(est_angles) - rad2deg(azimuth_angles)));
     end
 end
 
 figure;
-plot(angle_search,pow2db(PDDA_spectrum),'LineWidth',2);
-hold on;
-plot(azimuth_angles,pow2db(PDDA_spectrum(ang_idx(1:k))),'LineStyle','none','Marker','o','MarkerSize',10,'LineWidth',2);
-plot(angle_search(idx),pow2db(PDDA_spectrum(idx)),'LineStyle','none','Marker','x','MarkerSize',10,'LineWidth',2);
-xlabel('Angles [radian]','FontSize',20,'Interpreter','latex');
-ylabel('Spectrum value','FontSize',20,'Interpreter','latex');
+plot(SNR,mean(error),'LineWidth',2);
+xlabel('SNR [dB]','FontSize',20,'Interpreter','latex');
+ylabel('Error [degree]','FontSize',20,'Interpreter','latex');
 ax = gca;
 grid on;
 ax.FontSize = 20;
 ax.TickLabelInterpreter = "latex";
-hold on;
-legend('PDDA Spectrum Value [dB]','True angle','PDDA selection','FontSize',20,'interpreter','latex');
