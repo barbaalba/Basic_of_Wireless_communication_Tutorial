@@ -22,7 +22,8 @@ for snr_idx = 1:length(SNR)
         A = ULA_Evaluate(N,azimuth_angles,d_H); % channel
         % Mutual coupling matrix
         mutual_coupling_power = 0:N-1;
-        c = 2.^(-mutual_coupling_power);
+        coupling_coefficient = 2; % change value here to obtain different coupling [2 ... 10]
+        c = coupling_coefficient.^(-mutual_coupling_power); 
         for i = 2:length(c)
             c(i) = sqrt(c(i)/2) * (randn + 1i*randn); 
         end
