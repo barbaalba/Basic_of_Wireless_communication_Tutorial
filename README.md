@@ -89,6 +89,9 @@ Another method is PDDA [3], which is more computationally efficient.
 Based on the SNR and the number of snapshots of the channel, PDDA and MUSIC have different accuracy estimates of the angle of arrival. Below, 32 antennas ULA is utilized to collect 8 snapshots and estimate the angle of arrival for one user.
 ![MUSCI_PDDA](Images/MUSIC_vs_PDDA.jpg)
 
+When considering multiple antennas, there is always concern about mutual coupling. Below, it shows how strong coupling can degrade the performance of AoA estimation based on MUSIC. Here, there is a 32 ULA with lambda/4 spacing. 
+![ULA_coupling](Images/Mutual_coupling.jpg)
+
 # Positioning
 We can localize a source based on triangulation using two APs or based on trilateration using three APs in the 2D plane. More details can be found in `Trilateration_and_Triangulation.pdf`.
 - `PositionEstimate_Triangulation.m`
