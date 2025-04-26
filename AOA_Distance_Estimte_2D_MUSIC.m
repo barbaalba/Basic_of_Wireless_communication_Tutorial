@@ -59,6 +59,7 @@ end
 surfc(X,Y,MUSIC_spectrum,'EdgeColor','none');
 xlabel('Distance [m]','FontSize',20,'Interpreter','latex');
 ylabel('AoA [rad]','FontSize',20,'Interpreter','latex');
+zlabel('$f(\mathbf{\psi})$','FontSize',20,'Interpreter','latex');
 
 [~,idx] = max(MUSIC_spectrum,[],"all");
 [row,col] = ind2sub([length(angle_search),length(distance_search)],idx);
